@@ -19,3 +19,9 @@ def read_all_mias_dataset(folder):
             img = cv2.resize(img,(64,64))
             images.append(img)
     return images
+    
+def get_result_psnr(x_test, out):
+    psnr_sum = 0
+    for i in range(out.shape[0]):
+        psnr_sum += get_psnr(x_test[i],out[i])
+    return 1.0*psnr_sum/out.shape[0];
