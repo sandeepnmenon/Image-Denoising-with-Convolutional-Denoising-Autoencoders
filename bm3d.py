@@ -1,5 +1,4 @@
 import cv2
-import PSNR
 import numpy
 
 
@@ -302,29 +301,4 @@ def BM3D_2nd_step(_basicImg, _noisyImg):
     return Final
 
 
-if __name__ == '__main__':
-    cv2.setUseOptimized(True)
-    img_name = "noisy.jpg"
-    img = cv2.imread(img_name, cv2.IMREAD_GRAYSCALE)
-
-    e1 = cv2.getTickCount()
-    Basic_img = BM3D_1st_step(img)
-    e2 = cv2.getTickCount()
-    time = (e2 - e1) / cv2.getTickFrequency()
-    print("The Processing time of the First step is %f s" % time)
-    cv2.imwrite("catBasic.jpg", Basic_img)
-    psnr = PSNR.PSNR(img, Basic_img)
-    print ("The PSNR between the two img of the First step is %f" % psnr)
-
-    # Basic_img = cv2.imread("Basic3.jpg", cv2.IMREAD_GRAYSCALE)
-
-    Final_img = BM3D_2nd_step(Basic_img, img)
-    e3 = cv2.getTickCount()
-    time = (e3 - e2) / cv2.getTickFrequency()
-    print( "The Processing time of the Second step is %f s" % time)
-    cv2.imwrite("catFinal.jpg", Final_img)
-    psnr = PSNR.PSNR(img, Final_img)
-    print( "The PSNR between the two img of the Second step is %f" % psnr)
-    time = (e3 - e1) / cv2.getTickFrequency()   
-    print( "The total Processing time is %f s" % time)
 
