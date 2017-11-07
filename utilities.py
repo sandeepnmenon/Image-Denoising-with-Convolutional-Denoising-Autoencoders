@@ -52,12 +52,10 @@ def gaussian_noise(x_train,mean,sigma,proportion):
     x_train_noisy = []
     for i in range(x_train.shape[0]):
         image = x_train[i]
-        noise = proportion*np.random.normal(mean,sigma,x_train[0].shape)
-        x_train_noisy.append(image + noise)
+        noise = proportion*np.random.normal(mean,sigma,x_train[i].shape)       
+        x_train_noisy.append(np.clip(image + noise,0,255.))
      
-    x_train_noisy = np.clip(x_train_noisy, 0., 255.)
-    
-    return x_train_noisy
+    return np.array(x_train_noisy)
 
 #Poisson Noise
 def poisson_noise(x_train):
