@@ -2,7 +2,8 @@
 *.jpg
 *.jpeg
 data/
+models/
 .ipynb_checkpoints/
 *.pyc
 *.ods
-models/
+*.hdf5
