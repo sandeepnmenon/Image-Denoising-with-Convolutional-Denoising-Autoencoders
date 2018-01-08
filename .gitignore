@@ -3,6 +3,7 @@
 *.jpeg
 data/
 models/
+cluster/
 .ipynb_checkpoints/
 *.pyc
 *.ods
