@@ -8,3 +8,6 @@ cluster/
 *.pyc
 *.ods
 *.hdf5
+*.docx
+test_data/
+For synthetic experiments/
