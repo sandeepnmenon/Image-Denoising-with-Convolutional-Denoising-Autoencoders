@@ -1,6 +1,7 @@
 *.png
 *.jpg
 *.jpeg
+*.tif
 data/
 models/
 cluster/
@@ -8,3 +9,5 @@ cluster/
 *.pyc
 *.ods
 *.hdf5
+test_data/
+*.docx
