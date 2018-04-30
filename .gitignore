@@ -11,3 +11,5 @@ cluster/
 *.hdf5
 test_data/
 *.docx
+Denoising\ Experiments.ipynb
+
